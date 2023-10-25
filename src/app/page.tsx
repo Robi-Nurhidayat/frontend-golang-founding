@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Drone from "public/drone.png";
 import ChecklistIcon from "public/icon-checklist.svg";
+import Star from "public/star.png";
 
 const Home = () => {
   return (
@@ -46,7 +47,7 @@ const Home = () => {
               <span>Rp. 80.000.000</span>
             </div>
           </div>
-          <div className="w-[322px] h-[158px] border rounded-3xl p-[22px_34px_22px_68px]">
+          <div className="w-[322px] h-[158px] border rounded-3xl p-[22px_34px_22px_68px] flex items-center">
             <div className="w-[220px] h-[114px] flex flex-col gap-y-2.5">
               <h6>Why we fit for you:</h6>
               <ul className="flex flex-col gap-y-[10px]">
@@ -67,6 +68,24 @@ const Home = () => {
                   </span>
                 </li>
               </ul>
+            </div>
+          </div>
+          <div className="w-[232px] h-[252px] border rounded-3xl">
+            <div>
+              <div>image</div>
+              <h6>Julia Keeva</h6>
+              <p>Project Manager</p>
+              <div className="flex justify-between">
+                <Image src={Star} alt="star review" />
+                <Image src={Star} alt="star review" />
+                <Image src={Star} alt="star review" />
+                <Image src={Star} alt="star review" />
+                <Image src={Star} alt="star review" />
+              </div>
+              <div className="flex justify-between">
+                <span>5/5</span>
+                <span>208 Projects</span>
+              </div>
             </div>
           </div>
         </div>
