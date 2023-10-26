@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <header className="bg-[#3B41E3] flex justify-between items-center px-[100px] pt-[50px]">
+    <header className="bg-[#3B41E3] flex justify-between items-center px-[100px] pt-[50px] z-50">
       <nav className="flex  gap-x-[14px]">
         <div className="logo">
           <Image src={Logo} alt="Logo" />
