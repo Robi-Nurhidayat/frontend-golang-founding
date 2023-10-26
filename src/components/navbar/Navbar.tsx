@@ -5,8 +5,8 @@ import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <header className="flex justify-between items-center px-[100px] pt-[50px]">
-      <nav className="flex border gap-x-[14px]">
+    <header className="bg-[#3B41E3] flex justify-between items-center px-[100px] pt-[50px]">
+      <nav className="flex  gap-x-[14px]">
         <div className="logo">
           <Image src={Logo} alt="Logo" />
         </div>
