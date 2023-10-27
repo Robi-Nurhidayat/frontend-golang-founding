@@ -4,7 +4,7 @@ import Drone from 'public/drone.png'
 
 const Campaign = () => {
   return (
-    <div className='pl-[100px] mb-[50px]'>
+    <div className='pl-[50px] mb-[50px]'>
         <div className="w-[1283px] flex justify-between mb-[50px]">
             <h2 className="w-[319px] text-[28px] font-[500] text-[#222]">Project baru yang bisa Anda kerjakan</h2>
             <Link href={"/"}>Lihat Semua</Link>

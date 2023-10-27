@@ -1,3 +1,4 @@
+import Review from "@/components/Review/Review";
 import CallToAction from "@/components/calltoaction/CallToAction";
 import Campaign from "@/components/campaign/Campaign";
 import Hero from "@/components/hero/Hero";
@@ -10,6 +11,7 @@ const Home = () => {
       <Hero />
       <StepIlustration />
       <Campaign />
+      <Review />
       <CallToAction />
     </div>
   );
