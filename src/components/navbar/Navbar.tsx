@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const Navbar = () => {
   return (
-    <header className="bg-[#3B41E3] flex justify-between items-center px-[100px] pt-[50px] z-50">
+    <header className="bg-[#3B41E3] flex justify-between items-center px-[100px] pt-[50px] pb-[2px] z-50">
       <nav className="flex  gap-x-[14px]">
         <div className="logo">
           <Image src={Logo} alt="Logo" />
@@ -16,7 +16,7 @@ const Navbar = () => {
               <li
                 key={link.id}
                 style={{ fontWeight: "500" }}
-                className="text-[18px]"
+                className="text-[18px] text-white hover:text-[#FF872E] duration-150"
               >
                 <Link href={link.path}>{link.title}</Link>
               </li>
@@ -24,11 +24,11 @@ const Navbar = () => {
           })}
         </ul>
       </nav>
-      <div className="flex justify-between items-center gap-x-5 text-[18px]">
-        <Link href={"/"} className="p-[6px_51px_7px_52px] border rounded-full">
+      <div className="flex justify-between items-center gap-x-5 text-[18px] text-white">
+        <Link href={"/"} className="p-[6px_51px_7px_52px] border rounded-full hover:bg-white hover:text-[#222] duration-150">
           Daftar
         </Link>
-        <Link href={"/"} className="p-[6px_32px_7px_33px] border rounded-full">
+        <Link href={"/"} className="p-[6px_32px_7px_33px] border rounded-full hover:bg-white hover:text-[#222] duration-150">
           Akun Saya
         </Link>
       </div>

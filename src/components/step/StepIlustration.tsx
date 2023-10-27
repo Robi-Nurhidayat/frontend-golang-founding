@@ -25,7 +25,7 @@ const StepIlustration = () => {
            <div className="w-[212px] h-[362px] flex flex-col gap-y-4 items-center justify-end -translate-y-[70px]">
                 <div><Image src={StepTwo} alt="step 2" className="w-[191.24px]" /></div>
                 <h6 className="text-center text-[18px] font-[500]">Buka Project</h6>
-                <p className="w-[212px] text-[16px] text-center text-[#222222] font-[300]">Pilih beberapa ide project, dan mulailah mendanai</p>
+                <p className="w-[212px] text-[16px] text-center text-[#222222] font-[300]">Pilih beberapa ide project,dan mulailah mendanai</p>
             </div>
 
        
@@ -34,7 +34,7 @@ const StepIlustration = () => {
             <div className="w-[243.8px] h-[362px] flex flex-col gap-y-4 items-center justify-end -translate-y-[140px]">
                 <div><Image src={StepThree} alt="step 3" className="w-full" /></div>
                 <h6 className="text-center text-[18px] font-[500]">Jalankan</h6>
-                <p className="w-[243px] text-[16px] text-center text-[#222222] font-[300]">Saatnya buat mimpi Anda menjadi nyata. </p>
+                <p className="w-[243px] text-[16px] text-center text-[#222222] font-[300]">Saatnya buat mimpi Andamenjadi nyata. </p>
             
             </div>
         </div>
