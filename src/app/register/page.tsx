@@ -68,7 +68,7 @@ const Register = () => {
               Password
             </label>
             <input
-              type="text"
+              type="password"
               name="password"
               className="text-[16px] text-[#BFBFBF] py-4 pl-[30px] pr-[51px] rounded-full w-[400px] outline-none"
               placeholder="Masukkan password  Anda "

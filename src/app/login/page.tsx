@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import ImageLogin from "public/image-login.jpg";
+import ImageLogin from "public/sign-in-background@2x.jpg";
 
 const Login = () => {
   return (
-    <div className="w-screen h-screen bg-blue-400 flex">
-      <div className=" flex-[0_0_564px]  h-full">
+    <div className="w-screen h-screen bg-[#3B41E3] flex">
+      <div className=" flex-[0_0_564px] rounded-full  h-full">
         <Image
           src={ImageLogin}
           alt="image"
@@ -22,12 +22,12 @@ const Login = () => {
               htmlFor="email"
               className="text-[20px] font-[500] text-white"
             >
-              Email
+              Email Address
             </label>
             <input
               type="text"
               name="email"
-              className="text-[16px] text-[#BFBFBF] py-4 pl-[30px] pr-[51px] rounded-full w-[400px] outline-none"
+              className="text-[16px] text-[#222] py-4 pl-[30px] pr-[51px] rounded-full w-[400px] outline-none"
               placeholder="Masukkan alamat email Anda "
             />
           </div>
@@ -39,9 +39,9 @@ const Login = () => {
               Password
             </label>
             <input
-              type="text"
+              type="password"
               name="password"
-              className="text-[16px] text-[#BFBFBF] py-4 pl-[30px] pr-[51px] rounded-full w-[400px] outline-none"
+              className="text-[16px] text-[#222] py-4 pl-[30px] pr-[51px] rounded-full w-[400px] outline-none"
               placeholder="Masukkan password  Anda "
             />
           </div>
