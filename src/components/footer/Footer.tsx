@@ -3,7 +3,8 @@ import Link from "next/link";
 import Logo from "public/logo.svg";
 const Footer = () => {
   return (
-    <footer className="ml-[100px] w-[1086px] flex justify-between">
+    <footer className="bg-[#3B41E3] pt-1 -mt-[1px] text-white pb-[120px]">
+      <div className="ml-[100px] w-[1086px] flex justify-between ">
       <section className="flex flex-col gap-y-[16px]">
         <div className="flex items-center gap-x-[30px]">
           <Image src={Logo} alt="logo" />
@@ -67,6 +68,7 @@ const Footer = () => {
           </li>
         </ul>
       </section>
+      </div>
     </footer>
   );
 };

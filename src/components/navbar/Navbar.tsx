@@ -2,10 +2,11 @@ import links from "@/utils/nav-links";
 import Link from "next/link";
 import Logo from "public/logo.svg";
 import Image from "next/image";
+import RadialLine from 'public/Radial-Backgroud.png'
 
 const Navbar = () => {
   return (
-    <header className="bg-[#3B41E3] flex justify-between items-center px-[100px] pt-[50px] pb-[2px] z-50">
+    <header className="bg-[#3B41E3] flex justify-between items-center px-[100px] pt-[50px] pb-[2px] ">
       <nav className="flex  gap-x-[14px]">
         <div className="logo">
           <Image src={Logo} alt="Logo" />
@@ -32,6 +33,8 @@ const Navbar = () => {
           Akun Saya
         </Link>
       </div>
+
+     
     </header>
   );
 };
