@@ -7,7 +7,7 @@ import AvatarFilled from 'public/avatar-filled.jpg'
 
 const Hero = () => {
   return (
-    <div style={{clipPath: "polygon(0 0, 100% 0, 100% 84%, 0% 100%)", marginTop: '-1px'}} className="bg-[#3B41E3] mb-10 pl-[75px] pt-[90px] flex gap-x-[72px] z-50">
+    <div style={{clipPath: "polygon(0 0, 100% 0, 100% 84%, 0% 100%)", marginTop: '-150px'}} className="bg-[#3B41E3] mb-10 pl-[75px]  flex gap-x-[72px] z-50">
         <div className="w-[547px] text-white relative">
           <h1 className="mb-[26px] text-[36px]  font-[500]">
             Kami siap membantu startup untuk memulai & mendanai kebutuhan mereka
