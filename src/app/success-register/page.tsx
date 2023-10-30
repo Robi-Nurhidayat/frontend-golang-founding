@@ -1,15 +1,3 @@
-// import Image from "next/image";
-// import SuccesRegisterImage from "public/success-illustration.svg";
-// const SuccessRegister = () => {
-//   return (
-//     <div className="h-screen w-screen justify-center">
-//       <Image src={SuccesRegisterImage} alt="image" />
-
-//     </div>
-//   );
-// };
-// export default SuccessRegister;
-
 import Image from "next/image";
 import Link from "next/link";
 import SuccesRegisterImage from "public/success-illustration.svg";
