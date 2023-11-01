@@ -1,8 +1,10 @@
+"use client";
 import links from "@/utils/nav-links";
 import Link from "next/link";
 import Logo from "public/logo.svg";
 import Image from "next/image";
-import RadialLine from 'public/Radial-Backgroud.png'
+import RadialLine from "public/Radial-Backgroud.png";
+import { signIn } from "next-auth/react";
 
 const Navbar = () => {
   return (
@@ -26,15 +28,21 @@ const Navbar = () => {
         </ul>
       </nav>
       <div className="flex justify-between items-center gap-x-5 text-[18px] text-white">
-        <Link href={"/"} className="p-[6px_51px_7px_52px] border rounded-full hover:bg-white hover:text-[#222] duration-150">
+        <Link
+          href={"/"}
+          className="p-[6px_51px_7px_52px] border rounded-full hover:bg-white hover:text-[#222] duration-150"
+        >
           Daftar
         </Link>
-        <Link href={"/"} className="p-[6px_32px_7px_33px] border rounded-full hover:bg-white hover:text-[#222] duration-150">
+        <Link
+          href={"/"}
+          className="p-[6px_32px_7px_33px] border rounded-full hover:bg-white hover:text-[#222] duration-150"
+        >
           Akun Saya
         </Link>
-      </div>
 
-     
+        <button onClick={() => signIn()}>Test</button>
+      </div>
     </header>
   );
 };
