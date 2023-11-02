@@ -30,7 +30,13 @@ const Login = () => {
       const { data } = response;
 
       if (data) {
-        toast.success("Success login");
+        toast("Login Successfully", {
+          hideProgressBar: false,
+          autoClose: 2000,
+          type: "success",
+          position: "top-center",
+        });
+
         return router.push("dashboard");
       } else {
         alert("Email atau password tidak valid");

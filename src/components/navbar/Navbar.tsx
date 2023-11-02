@@ -3,8 +3,6 @@ import links from "@/utils/nav-links";
 import Link from "next/link";
 import Logo from "public/logo.svg";
 import Image from "next/image";
-import RadialLine from "public/Radial-Backgroud.png";
-import { signIn } from "next-auth/react";
 
 const Navbar = () => {
   return (
@@ -40,8 +38,6 @@ const Navbar = () => {
         >
           Akun Saya
         </Link>
-
-        <button onClick={() => signIn()}>Test</button>
       </div>
     </header>
   );
