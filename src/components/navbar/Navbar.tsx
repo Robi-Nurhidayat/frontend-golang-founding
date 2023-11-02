@@ -35,7 +35,7 @@ const Navbar = () => {
           Daftar
         </Link>
         <Link
-          href={"/"}
+          href={"/login"}
           className="p-[6px_32px_7px_33px] border rounded-full hover:bg-white hover:text-[#222] duration-150"
         >
           Akun Saya

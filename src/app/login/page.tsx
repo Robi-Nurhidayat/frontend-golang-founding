@@ -3,9 +3,11 @@ import LoginUploadImage from "@/components/login/LoginUploadImage";
 import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
+
+import { useRouter } from "next/navigation";
 import ImageLogin from "public/sign-in-background@2x.jpg";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const router = useRouter();
@@ -26,10 +28,10 @@ const Login = () => {
       );
 
       const { data } = response;
-      console.log(data);
 
       if (data) {
-        router.push("/dashboard");
+        toast.success("Success login");
+        return router.push("dashboard");
       } else {
         alert("Email atau password tidak valid");
       }
@@ -43,6 +45,7 @@ const Login = () => {
       }
     }
   };
+
   return (
     <div className="w-screen h-screen bg-[#3B41E3] flex">
       <div className=" flex-[0_0_564px] rounded-full  h-full">
