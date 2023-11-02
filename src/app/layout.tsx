@@ -2,10 +2,6 @@ import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
-import AuthProvider from "@/components/AuthProvider/AuthProvider";
-import { getServerSession } from "next-auth";
-import { authOptions } from "./api/auth/[...nextauth]";
-
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
@@ -23,12 +19,13 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const session = await getServerSession(authOptions);
+  // const session = await getServerSession(authOptions);
   return (
     <html lang="en">
       {/* <body className={inter.className}>{children}</body> */}
       <body className={`${poppins.variable}`}>
-        <AuthProvider session={session}>{children}</AuthProvider>
+        {/* <AuthProvider session={session}>{children}</AuthProvider> */}
+        {children}
       </body>
     </html>
   );

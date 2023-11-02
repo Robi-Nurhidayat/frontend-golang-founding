@@ -29,7 +29,7 @@ const Navbar = () => {
       </nav>
       <div className="flex justify-between items-center gap-x-5 text-[18px] text-white">
         <Link
-          href={"/"}
+          href={"/register"}
           className="p-[6px_51px_7px_52px] border rounded-full hover:bg-white hover:text-[#222] duration-150"
         >
           Daftar
