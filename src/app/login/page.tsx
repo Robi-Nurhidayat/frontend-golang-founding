@@ -1,16 +1,19 @@
 "use client";
 import LoginUploadImage from "@/components/login/LoginUploadImage";
 import axios from "axios";
+import Cookies from "js-cookie";
+import { signIn, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
 
 import { useRouter } from "next/navigation";
 import ImageLogin from "public/sign-in-background@2x.jpg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
 const Login = () => {
   const router = useRouter();
+
   const [formLogin, setFormLogin] = useState({
     email: "",
     password: "",
@@ -19,39 +22,33 @@ const Login = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      const response = await axios.post(
-        "http://localhost:8080/api/v1/sessions",
-        {
+      await axios
+        .post("http://localhost:8080/api/v1/sessions", {
           email: formLogin.email,
           password: formLogin.password,
-        }
-      );
+        })
+        .then((response) => {
+          console.log(response);
+          Cookies.set("token", response.data.data.token);
 
-      const { data } = response;
-
-      if (data) {
-        toast("Login Successfully", {
-          hideProgressBar: false,
-          autoClose: 2000,
-          type: "success",
-          position: "top-center",
+          //redirect to dashboard
+          router.push("/dashboard");
+        })
+        .catch((error) => {
+          console.log(error);
         });
-
-        return router.push("dashboard");
-      } else {
-        alert("Email atau password tidak valid");
-      }
-    } catch (error: any) {
-      if (error.response) {
-        // Tangani kesalahan status code HTTP di sini (misalnya, status code 422)
-        alert("Gagal login. Periksa kembali email dan password Anda.");
-      } else {
-        // Tangani kesalahan jaringan atau lainnya di sini
-        alert("Terjadi kesalahan saat melakukan permintaan.");
-      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
+  useEffect(() => {
+    //check token
+    if (Cookies.get("token")) {
+      //redirect page dashboard
+      router.push("/dashboard");
+    }
+  }, []);
   return (
     <div className="w-screen h-screen bg-[#3B41E3] flex">
       <div className=" flex-[0_0_564px] rounded-full  h-full">

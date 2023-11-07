@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
+// import AuthProvider from "@/components/AuthProvider/AuthProvider";
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
@@ -20,14 +21,13 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // const session = await getServerSession(authOptions);
   return (
     <html lang="en">
-      {/* <body className={inter.className}>{children}</body> */}
       <body className={`${poppins.variable}`}>
-        {/* <AuthProvider session={session}>{children}</AuthProvider> */}
+        {/* <AuthProvider> */}
         <ToastContainer />
         {children}
+        {/* </AuthProvider> */}
       </body>
     </html>
   );
