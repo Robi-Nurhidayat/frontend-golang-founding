@@ -14,6 +14,7 @@ import { toast } from "react-toastify";
 const Login = () => {
   const router = useRouter();
 
+  const [token, setToken] = useState<String>("");
   const [formLogin, setFormLogin] = useState({
     email: "",
     password: "",
@@ -22,33 +23,30 @@ const Login = () => {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
     try {
-      await axios
-        .post("http://localhost:8080/api/v1/sessions", {
+      const response = await axios.post(
+        "http://localhost:8080/api/v1/sessions",
+        {
           email: formLogin.email,
           password: formLogin.password,
-        })
-        .then((response) => {
-          console.log(response);
-          Cookies.set("token", response.data.data.token);
+        }
+      );
 
-          //redirect to dashboard
-          router.push("/dashboard");
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+      Cookies.set("token", response.data.data.token);
+      setToken(response.data.data.token);
+      console.log(token);
+      if (token) {
+        router.push("/dashboard");
+      }
     } catch (error) {
       console.log(error);
     }
   };
 
-  useEffect(() => {
-    //check token
-    if (Cookies.get("token")) {
-      //redirect page dashboard
-      router.push("/dashboard");
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (token) {
+  //     router.push("/dashboard");
+  //   }
+  // },[]);
   return (
     <div className="w-screen h-screen bg-[#3B41E3] flex">
       <div className=" flex-[0_0_564px] rounded-full  h-full">

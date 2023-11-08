@@ -12,37 +12,25 @@ import axios from "axios";
 
 const Dashboard = () => {
   const [show, setShow] = useState(true);
+
   const token = Cookies.get("token");
-
-  const router = useRouter();
-  //state user
-  const [user, setUser] = useState({});
-
-  //function "fetchData"
-  const fetchData = async () => {
-    //set axios header dengan type Authorization + Bearer token
-    axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-    //fetch user from Rest API
-    await axios
-      .get(`${process.env.NEXT_PUBLIC_API_BACKEND}/api/user`)
-      .then((response) => {
-        //set response user to state
-        setUser(response.data);
-      });
+  console.log(token);
+  const getUser = async () => {
+    try {
+      const response = await axios.get(
+        "http://localhost:8080/api/v1/users/fetch",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      console.log(response);
+    } catch (error) {}
   };
-
-  //hook useEffect
   useEffect(() => {
-    //check token empty
-    if (!token) {
-      //redirect login page
-      router.push("/login");
-    }
-
-    //call function "fetchData"
-    fetchData();
+    getUser();
   }, []);
-
   return (
     <div>
       <Navbar />
